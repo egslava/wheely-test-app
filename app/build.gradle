@@ -41,6 +41,11 @@ dependencies {
     compile 'com.android.support:appcompat-v7:19.+'
     compile 'com.google.android.gms:play-services:4.2.42'
 
+    compile 'org.apache.commons:commons-lang3:3.3.2'
+
+    compile 'org.codehaus.jackson:jackson-core-asl:1.9.7'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.7'
+
     compile project(":autobahn")
 
     compile fileTree(dir: 'libs', include: ['*.jar'])

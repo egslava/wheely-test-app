@@ -2,6 +2,13 @@
 <resources>
 
     <string name="app_name">testapp</string>
+    <string name="i">I\'m</string>
+    <string name="title_activity_login">Login</string>
     <string name="title_activity_maps">Map</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="connect">Connect</string>
+    <string name="invalid_password">Invalid password</string>
+    <string name="field_can_not_be_blank">The field is can not be blank</string>
 
 </resources>
