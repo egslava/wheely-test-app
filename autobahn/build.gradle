@@ -1,0 +1,30 @@
+apply plugin: 'android-library'
+
+android {
+    compileSdkVersion 8
+    buildToolsVersion "19.1.0"
+
+    defaultConfig {
+        applicationId "de.tavendo.autobahn"
+        minSdkVersion 8
+        targetSdkVersion 8
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_5
+            targetCompatibility JavaVersion.VERSION_1_5
+        }
+    }
+
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'org.codehaus.jackson:jackson-core-asl:1.9.7'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.7'
+//    compile files('libs/jackson-core-asl-1.9.7.jar')
+//    compile files('libs/jackson-mapper-asl-1.9.7.jar')
+}
