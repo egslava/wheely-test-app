@@ -1,4 +1,4 @@
-package org.cnii.testapp;
+package ru.wheely.egslava;
 
 import org.androidannotations.annotations.sharedpreferences.SharedPref;
 

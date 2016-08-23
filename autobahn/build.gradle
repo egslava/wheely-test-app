@@ -1,13 +1,13 @@
 apply plugin: 'android-library'
 
 android {
-    compileSdkVersion 8
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
 
     defaultConfig {
-        applicationId "de.tavendo.autobahn"
-        minSdkVersion 8
-        targetSdkVersion 8
+//        applicationId "de.tavendo.autobahn"
+        minSdkVersion 9
+        targetSdkVersion 24
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_5
             targetCompatibility JavaVersion.VERSION_1_5
@@ -16,13 +16,17 @@ android {
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
+//    compile group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: '4.3.5.1'
+
     compile 'org.codehaus.jackson:jackson-core-asl:1.9.7'
     compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.7'
 //    compile files('libs/jackson-core-asl-1.9.7.jar')

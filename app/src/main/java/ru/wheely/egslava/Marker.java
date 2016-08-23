@@ -1,8 +1,7 @@
-package org.cnii.testapp;
+package ru.wheely.egslava;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 

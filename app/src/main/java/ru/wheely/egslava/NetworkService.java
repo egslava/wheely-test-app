@@ -1,10 +1,7 @@
-package org.cnii.testapp;
+package ru.wheely.egslava;
 
 import android.app.IntentService;
-import android.app.Service;
 import android.content.Intent;
-import android.content.Context;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -15,7 +12,6 @@ import com.google.android.gms.maps.model.LatLng;
 
 import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.EIntentService;
-import org.androidannotations.annotations.EService;
 import org.androidannotations.annotations.ServiceAction;
 import org.androidannotations.annotations.SystemService;
 

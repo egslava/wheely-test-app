@@ -1,22 +1,22 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 
-def AAVersion = '3.0.1'
+def AAVersion = '4.1.0'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
 
     defaultConfig {
-        applicationId "org.cnii.testapp"
+        applicationId "ru.wheely.egslava"
         minSdkVersion 9
-        targetSdkVersion 20
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -27,10 +27,18 @@ android {
         exclude 'META-INF/NOTICE'
     }
 }
+
 apt {
     arguments {
-        androidManifestFile variant.processResources.manifestFile
-        resourcePackageName 'org.cnii.testapp'
+        androidManifestFile variant.outputs[0]?.processResources?.manifestFile
+        // if you have multiple outputs (when using splits), you may want to have other index than 0
+
+        // you should set your package name here if you are using different application IDs
+        // resourcePackageName "your.package.name"
+
+        // You can set optional annotation processing options here, like these commented options:
+        // logLevel 'INFO'
+        // logFile '/var/log/aa.log'
     }
 }
 
@@ -38,7 +46,7 @@ dependencies {
     apt "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
 
-    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.google.android.gms:play-services:4.2.42'
 
     compile 'org.apache.commons:commons-lang3:3.3.2'
@@ -48,5 +56,9 @@ dependencies {
 
     compile project(":autobahn")
 
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+
 }
